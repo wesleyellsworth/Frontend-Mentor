@@ -86,6 +86,7 @@ img, .img-card {
 .btn {
     height: 40px;
     width: 250px;
+    padding: 10px;
     background: hsl(158, 36%, 37%);
     color: #fff;
     border: none;
@@ -96,3 +97,10 @@ img, .img-card {
 footer {
     /* display: none; */
 }
+
+@media (max-width: 565px) {
+    .container {
+        display: block;
+    }
+  }
+  
