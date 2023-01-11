@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Lato:wght@300&family=Montserrat:wght@400;500&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,26 +12,81 @@ body {
 
 .container {
     background-color: #fff;
-    height: 100px;
-    width: 700px;
-
-    display: grid;
-    gap: 10px; 
+    border-radius: 20px;
+    height: 600px;
+    max-width: 1440px;
+    margin: 100px 100px;
+    display: flex;
+    align-content: center;
 }
 
-.card-img {
-    border-radius: 20px;
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 3;
+img {
+    border-radius: 20px 0px 0px 20px;
+    height: 600px;
+    width: 50%;
 }
 
 .card-text {
-    grid-column: 3;
-    grid-row: 1 / span 3;
+    border-radius: 0px 20px 20px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: #fff;
+}
+/* top right bottom left */
+.card-text p {
+    margin: 30px 30px 0px;
+    line-height: 1.7;
+    font-family: 'Montserrat', sans-serif;
+    color: hsl(228, 12%, 48%);
 
 }
 
+.card-text h1 {
+    margin: 20px 50px 10px 30px;
+}
+
+.sub-heading, h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.card-text h3 {
+    margin: 30px 100px 30px 30px;
+
+}
+
+.headding, h3 {
+    letter-spacing: 5px;
+    color: hsl(228, 12%, 48%);
+}
+
+.card-text .price p {
+    display: inline-block;
+    margin: 30px 0px 0px 50px;
+    color: hsl(158, 36%, 37%);  
+    font-size: 1.5rem;
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 700;
+}
+
+.card-text .price .sale {
+    color: hsl(228, 12%, 48%);
+    font-size: 1rem;
+}
+
+.btn {
+    display: block;
+    height: 50px;
+    width: 250px;
+    background: hsl(158, 36%, 37%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin: 50px 10px 10px 50px;
+}
+
 footer {
-    grid-column: 4;
-    grid-row: 1 / span 4;
+    display: none;
+    grid-column: 1 / span 4;
+    grid-row: 4;
 }
