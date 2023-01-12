@@ -5,102 +5,166 @@
     margin: 0;
 }
 
+:root {
+    --primary-dark-cyan: hsl(158, 36%, 37%);
+    --primary-cream: hsl(30, 38%, 92%);
+
+    --neutral-very-dark-blue: hsl(212, 21%, 14%);
+    --neutral-dark-grayish-blue: hsl(228, 12%, 48%);
+    --neutral-white: hsl(0, 0%, 100%);
+
+    /* For hover button */
+    --deep-aquamarine: #1A4032;
+
+    --font-weight-regular: 500;
+    --font-weight-bold: 700;
+
+    --font-size-body: 14px;
+
+    --font-family-accent: 'Fraunces', serif;
+    --font-family-main: 'Montserrat', sans-serif;
+}
+/* CSS reset */
+/* Credit: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+/* Remove default margin*/
+* {
+    margin: 0;
+}
+/* 3. Allow percentage-based heights in the application */
+html, body {
+    height: 100%;
+}
+/* Typographic tweaks! Add accessible line-height, improve text rendering */
 body {
-    background: hsl(30, 38%, 92%);
-    max-width: 1440px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+/* Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
 }
 
-.container {
-    background-color: #fff;
-    border-radius: 20px;
-    max-width: 870px;
-    max-height: 460px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
+/* Smaller line height for larger font sizes */
+h1 {
+    line-height: 1;
+} 
+
+body {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-regular);
+    color: var(--neutral-dark-grayish-blue);
+    font-size: var(--font-size-body);
+    background-color: var(--primary-cream);
+
+    display: grid;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
-img, .img-card {
-    border-radius: 20px 0px 0px 20px;
-    max-width: 50%;
+/* Product Card */
+.product {
+    background-color: var(--neutral-white);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: grid;
+    max-width: 600px;
 }
 
-.card-text {
-    max-width: 50%;
-    border-radius: 0px 20px 20px 0px;
-    background: #fff;
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product_content {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.product_category {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
+
+.product_title {
+    font-family: var(--font-family-accent);
+    font-size: 32px;
+    color: var(--neutral-very-dark-blue);
+}
+
+.product_price-sale {
+    font-family: var(--font-family-accent);
+    font-size: 32px;
+    color: var(--primary-dark-cyan);
     
 }
-/* top right bottom left */
 
-
-/* Heading */
-.card-text h3.heading {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    margin: 30px 30px 0px;
-    letter-spacing: 5px;
-    color: hsl(228, 12%, 48%);
+.product_price-original {
+    font-size: 13px;
+    text-decoration: line-through;
 }
 
-/* Sub-heading */
-.card-text h1.sub-heading{
-    margin: 15px 30px 0px;
-    padding-right: 12px;
-    font-family: 'Fraunces', sans-serif;
-}
-/* main-text */
- .card-text p.main-text {
-    margin: 15px 30px 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-    color: hsl(228, 12%, 48%);
-}
-
-/* price */
-.price {
-    margin: 15px 30px 0px;
-
-}
-.price p {
-    display: inline;
-    align-content: space-between;
-    /* margin-left: 30px 30px 0px; */
-    color: hsl(158, 36%, 37%);  
-    font-size: 1.9rem;
-    font-family: 'Fraunces', sans-serif;
-    font-weight: 700;
-}
-
-.price p.sale {
-    color: hsl(228, 12%, 48%);
-    vertical-align: center;
-    padding-left: 35px;
-    font-size: 0.9rem;
-}
-
-/* Button */
-.btn {
-    height: 40px;
-    width: 250px;
-    padding: 10px;
-    background: hsl(158, 36%, 37%);
-    color: #fff;
+/* Button Styling */
+.button {
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
     border: none;
-    border-radius: 10px;
-    margin: 25px 0px 0px;
+    text-decoration: none;
+    background-color: var(--primary-dark-cyan);
+    color: var(--neutral-white);
+    font-weight: var(--font-weight-bold);
+    border-radius: 8px;
+
+    display: inline-flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
 }
 
-footer {
-    /* display: none; */
+.button[data-icon="shopping-cart-icon"]::before {
+    content: "";
+    height: 16px;
+    width: 15px;
+    background-image: url("images/icon-cart.svg");
 }
 
-@media (max-width: 565px) {
-    .container {
-        display: block;
-    }
-  }
-  
+.button:is(hover, :focus) {
+    background-color: var(--deep-aquamarine);
+}
+
+/* Pricing Layout */
+
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Footer Styling */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
