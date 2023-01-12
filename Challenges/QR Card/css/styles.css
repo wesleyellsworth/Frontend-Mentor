@@ -45,13 +45,7 @@ body {
     border-radius: 10px;
     margin: auto;
     margin-top: 10%;
-
 }
-.container @media (min-width: 375px) {
-    .container {
-        display: none;
-    }    
-} 
 
 
 
